@@ -1,74 +1,84 @@
-🛡️ Guardrails Exercises
+#📘 Assignment – Input Guardrails
+##📝 Overview
 
-This repository contains three exercises that demonstrate how to use Input Guardrails in agents.
-Each exercise showcases a different real-world scenario for guardrail triggering, validation, and stopping agent execution.
+This project demonstrates how to create and trigger Input Guardrails using custom agents.
+Guardrails validate user input, restrict unsafe actions, and ensure that the agent only processes safe and compliant prompts.
 
-🧠 Exercise # 1 – Input Guardrail Trigger
-🎯 Objective:
+#🎯 Objectives
 
-Create an agent with an input guardrail that triggers when a sensitive or restricted prompt is entered.
+Understand how Input Guardrails prevent restricted inputs
 
-💬 Prompt Example:
+Implement agents with input validation and tripwire triggers
+
+Observe guardrail activations through logs
+
+Maintain safe and rule-based agent behavior
+
+#🧠 Key Concepts
+
+Input Guardrail – Checks and validates user input before execution
+
+Tripwire Trigger – Event that activates when restricted input is detected
+
+Agent Safety Control – Guardrails maintain compliance and prevent misuse
+
+Logging System – Displays guardrail activations and blocked inputs in the console
+
+🧩 Exercises
+🔹 Exercise 1 – Input Guardrail Trigger
+
+Prompt Example:
+
 I want to change my class timings 😭😭
 
-✅ Expected Outcome:
 
-When the above input is given, the InputGuardRailTripwireTriggered should be called in the except block.
-You can see this behavior clearly in your console logs.
+Expected Behavior:
+When this input is received, the system should raise
+InputGuardRailTripwireTriggered in the except block.
+You’ll see this event logged in your terminal output.
 
-🧩 Key Concept:
+🔹 Exercise 2 – Father Agent and Guardrail
 
-This shows how input validation can stop the agent before executing restricted actions.
-
-👨‍👦 Exercise # 2 – Father Agent and Father Guardrail
-🎯 Objective:
-
-Create a Father Agent with a Father Guardrail that stops the child agent from performing an action below 26°C.
-
-💬 Example Scenario:
-
-If a child agent tries to run when temperature is below 26°C:
+Scenario:
 
 Child: I want to go out and run! 🏃‍♂️
 
 
-If the temperature < 26°C, the Father Guardrail should stop the action and respond with:
+If the temperature < 26°C, the Father Guardrail stops the action:
 
 Father: No, it's too cold to run outside!
 
-✅ Expected Outcome:
 
-Execution is halted, and the guardrail logs a stop message in the console.
+Expected Behavior:
+The action is halted and logged in the console.
 
-🚪 Exercise # 3 – Gate Keeper Agent and Guardrail
-🎯 Objective:
+🔹 Exercise 3 – Gate Keeper Agent and Guardrail
 
-Create a Gate Keeper Agent with a Gate Keeper Guardrail that only allows students from a specific school to pass.
+Scenario:
 
-💬 Example Scenario:
 Student: I’m from City High School. Can I enter?
 
 
-If the student is not from City High School, the Gate Keeper Guardrail should block access and respond with:
+If the student is not from City High School, the Gate Keeper Guardrail responds:
 
 Gate Keeper: Sorry, only students from City High School are allowed!
 
-✅ Expected Outcome:
 
-The agent validates student identity and triggers a guardrail for unauthorized entries.
+Expected Behavior:
+Unauthorized access is blocked, and the guardrail logs the event.
 
 🧾 Logs & Debugging
 
-All events (input triggers, guardrail activations, and halts) will be visible in console logs.
-You can observe:
+All guardrail events appear in your console logs, showing:
 
-✅ Valid inputs being accepted
+✅ Valid inputs accepted
 
-🚫 Invalid inputs triggering guardrails
+🚫 Restricted inputs blocked
 
-⚠️ Execution halts shown in logs
+⚠️ Guardrail activations recorded
 
 🧑‍💻 Author
 
 Areeba Nadeem
-Project on Guardrails and Agent Execution Control
+Project: Input Guardrails and Agent Safety
+
